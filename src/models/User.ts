@@ -1,7 +1,6 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 
 export interface IUser extends Document {
-  _id: string;
   email: string;
   passwordHash: string;
   name: string;
@@ -9,7 +8,11 @@ export interface IUser extends Document {
   currency: string;
   timezone: string;
   plan: "free" | "pro";
-  resetGoal: "budget_discipline" | "debt_reset" | "savings_growth" | "giving_consistency";
+  resetGoal:
+    | "budget_discipline"
+    | "debt_reset"
+    | "savings_growth"
+    | "giving_consistency";
   onboardingComplete: boolean;
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
@@ -28,14 +31,19 @@ const UserSchema = new Schema<IUser>(
     plan: { type: String, enum: ["free", "pro"], default: "free" },
     resetGoal: {
       type: String,
-      enum: ["budget_discipline", "debt_reset", "savings_growth", "giving_consistency"],
+      enum: [
+        "budget_discipline",
+        "debt_reset",
+        "savings_growth",
+        "giving_consistency",
+      ],
       default: "budget_discipline",
     },
     onboardingComplete: { type: Boolean, default: false },
     stripeCustomerId: String,
     stripeSubscriptionId: String,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const User: Model<IUser> =
