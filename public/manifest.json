@@ -1,0 +1,22 @@
+{
+  "name": "Faith & Finance Reset",
+  "short_name": "FaithFinance",
+  "description": "Christian financial planner with 90-day reset program",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#FBF7F0",
+  "theme_color": "#2F6B4F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
